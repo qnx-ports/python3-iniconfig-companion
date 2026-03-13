@@ -5,7 +5,7 @@
 pkgname=python3-iniconfig
 _pyname=iniconfig
 pkgver=2.3.0
-pkgrel=0
+pkgrel=${pkgrel:-0}
 pkgdesc="brain-dead simple config-ini parsing"
 url="https://github.com/pytest-dev/iniconfig"
 arch="noarch"
@@ -41,6 +41,7 @@ package() {
         .dist/*.whl
 }
 
+options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 65f9200c904fae6d4691823a8c1c7af7d80d91438db47a6fa84a7688d0b95c73b65702a9ada16383a6c2036438b657b9981d2fcffbe6bbb5ed744b54557094eb  iniconfig-2.3.0.tar.gz
 "
